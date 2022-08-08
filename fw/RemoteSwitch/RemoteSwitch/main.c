@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 #define SEND_ALIVE_SIGNAL 150000
-#define BUTTON_DEBOUNCE_TRESHOLD 500
+#define BUTTON_DEBOUNCE_TRESHOLD 1500
 
 #define BUTTON1_LED_ON_EVENT_CHAR  'o'
 #define BUTTON1_LED_OFF_EVENT_CHAR 'f'
@@ -54,7 +54,7 @@ int main(void)
 		}
 
 	/* Button 1 detection */
-		if(BUTTON1_get_level())
+		if(!BUTTON1_get_level())
 		{
 			/* button detected */
 			button1_debounce_counter++;
